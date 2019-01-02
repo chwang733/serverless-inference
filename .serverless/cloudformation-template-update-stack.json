@@ -11,10 +11,10 @@
         "LogGroupName": "/aws/lambda/LambdaPython3-dev-lmInference"
       }
     },
-    "BearsInferenceLogGroup": {
+    "IcInferenceLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/LambdaPython3-dev-bearsInference"
+        "LogGroupName": "/aws/lambda/LambdaPython3-dev-icInference"
       }
     },
     "IamRoleLambdaExecution": {
@@ -61,7 +61,7 @@
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/LambdaPython3-dev-lmInference:*"
                     },
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/LambdaPython3-dev-bearsInference:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/LambdaPython3-dev-icInference:*"
                     }
                   ]
                 },
@@ -75,7 +75,7 @@
                       "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/LambdaPython3-dev-lmInference:*:*"
                     },
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/LambdaPython3-dev-bearsInference:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/LambdaPython3-dev-icInference:*:*"
                     }
                   ]
                 }
@@ -104,7 +104,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/LambdaPython3/dev/1546296759910-2018-12-31T22:52:39.910Z/LambdaPython3.zip"
+          "S3Key": "serverless/LambdaPython3/dev/1546396512411-2019-01-02T02:35:12.411Z/LambdaPython3.zip"
         },
         "FunctionName": "LambdaPython3-dev-lmInference",
         "Handler": "handler.lmInference",
@@ -123,27 +123,27 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "LmInferenceLambdaVersionJOkGyDBMFqTghtkic6LYAUOtPtNfnnYEGuJiYtnoQ": {
+    "LmInferenceLambdaVersion9nIQnd6OScW6PNC126rsNHhijSuFkAZ0DofAVftsjk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "LmInferenceLambdaFunction"
         },
-        "CodeSha256": "BOz9MaV1vfsBM1kbaovhiFftxZg8fgoTP/cit6oC3YM="
+        "CodeSha256": "KPGzpvCrkDHr6Oa8gwlnQI3MoKCdvXM2RelRUtezOzk="
       }
     },
-    "BearsInferenceLambdaFunction": {
+    "IcInferenceLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/LambdaPython3/dev/1546296759910-2018-12-31T22:52:39.910Z/LambdaPython3.zip"
+          "S3Key": "serverless/LambdaPython3/dev/1546396512411-2019-01-02T02:35:12.411Z/LambdaPython3.zip"
         },
-        "FunctionName": "LambdaPython3-dev-bearsInference",
-        "Handler": "handler.bye",
+        "FunctionName": "LambdaPython3-dev-icInference",
+        "Handler": "handler.icInference",
         "MemorySize": 1024,
         "Role": {
           "Fn::GetAtt": [
@@ -155,18 +155,18 @@
         "Timeout": 6
       },
       "DependsOn": [
-        "BearsInferenceLogGroup",
+        "IcInferenceLogGroup",
         "IamRoleLambdaExecution"
       ]
     },
-    "BearsInferenceLambdaVersionqFSEwequsbKDVju5d3FWQntOirTQl1UeLtkyjY5vrDs": {
+    "IcInferenceLambdaVersionxaTdvTbUKPj8500yTA90X4AGuEkgCiWMbdwEnAVdw": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "BearsInferenceLambdaFunction"
+          "Ref": "IcInferenceLambdaFunction"
         },
-        "CodeSha256": "BOz9MaV1vfsBM1kbaovhiFftxZg8fgoTP/cit6oC3YM="
+        "CodeSha256": "KPGzpvCrkDHr6Oa8gwlnQI3MoKCdvXM2RelRUtezOzk="
       }
     },
     "ApiGatewayRestApi": {
@@ -310,8 +310,8 @@
               "StatusCode": "200",
               "ResponseParameters": {
                 "method.response.header.Access-Control-Allow-Origin": "'*'",
-                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
-                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent,Startlower,Text,Access-Control-Allow-Headers,Access-Control-Allow-Origin'",
+                "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,POST'",
                 "method.response.header.Access-Control-Allow-Credentials": "'false'"
               },
               "ResponseTemplates": {
@@ -371,10 +371,10 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayMethodBearsInferenceGet": {
+    "ApiGatewayMethodBearsInferencePost": {
       "Type": "AWS::ApiGateway::Method",
       "Properties": {
-        "HttpMethod": "GET",
+        "HttpMethod": "POST",
         "RequestParameters": {},
         "ResourceId": {
           "Ref": "ApiGatewayResourceBearsInference"
@@ -402,7 +402,7 @@
                 ":lambda:path/2015-03-31/functions/",
                 {
                   "Fn::GetAtt": [
-                    "BearsInferenceLambdaFunction",
+                    "IcInferenceLambdaFunction",
                     "Arn"
                   ]
                 },
@@ -414,7 +414,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1546296759919": {
+    "ApiGatewayDeployment1546396512422": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -426,7 +426,7 @@
         "ApiGatewayMethodLmInferenceOptions",
         "ApiGatewayMethodBearsInferenceOptions",
         "ApiGatewayMethodLmInferenceGet",
-        "ApiGatewayMethodBearsInferenceGet"
+        "ApiGatewayMethodBearsInferencePost"
       ]
     },
     "LmInferenceLambdaPermissionApiGateway": {
@@ -476,12 +476,12 @@
         }
       }
     },
-    "BearsInferenceLambdaPermissionApiGateway": {
+    "IcInferenceLambdaPermissionApiGateway": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "BearsInferenceLambdaFunction",
+            "IcInferenceLambdaFunction",
             "Arn"
           ]
         },
@@ -533,13 +533,13 @@
     "LmInferenceLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "LmInferenceLambdaVersionJOkGyDBMFqTghtkic6LYAUOtPtNfnnYEGuJiYtnoQ"
+        "Ref": "LmInferenceLambdaVersion9nIQnd6OScW6PNC126rsNHhijSuFkAZ0DofAVftsjk"
       }
     },
-    "BearsInferenceLambdaFunctionQualifiedArn": {
+    "IcInferenceLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "BearsInferenceLambdaVersionqFSEwequsbKDVju5d3FWQntOirTQl1UeLtkyjY5vrDs"
+        "Ref": "IcInferenceLambdaVersionxaTdvTbUKPj8500yTA90X4AGuEkgCiWMbdwEnAVdw"
       }
     },
     "ServiceEndpoint": {
