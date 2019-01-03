@@ -1,0 +1,22 @@
+{
+  "name": "serverless-inference",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chwang733/serverless-inference.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chwang733/serverless-inference/issues"
+  },
+  "homepage": "https://github.com/chwang733/serverless-inference#readme",
+  "dependencies": {
+    "serverless-python-requirements": "^4.2.5"
+  }
+}
