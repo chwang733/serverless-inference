@@ -118,7 +118,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/LambdaPython3/dev/1546396512411-2019-01-02T02:35:12.411Z/LambdaPython3.zip"
+                "S3Key": "serverless/LambdaPython3/dev/1546487200473-2019-01-03T03:46:40.473Z/LambdaPython3.zip"
               },
               "FunctionName": "LambdaPython3-dev-lmInference",
               "Handler": "handler.lmInference",
@@ -137,14 +137,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "LmInferenceLambdaVersion9nIQnd6OScW6PNC126rsNHhijSuFkAZ0DofAVftsjk": {
+          "LmInferenceLambdaVersionoZPQMulPkb2xgn9A26f1EnJ2Puu7U6yWo2OBoDbgI": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "LmInferenceLambdaFunction"
               },
-              "CodeSha256": "KPGzpvCrkDHr6Oa8gwlnQI3MoKCdvXM2RelRUtezOzk="
+              "CodeSha256": "0d1WZ9okjHAqLWoZOJ/JBjP+40Pqpd/Jay7B7z/LB1Q="
             }
           },
           "IcInferenceLambdaFunction": {
@@ -154,7 +154,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/LambdaPython3/dev/1546396512411-2019-01-02T02:35:12.411Z/LambdaPython3.zip"
+                "S3Key": "serverless/LambdaPython3/dev/1546487200473-2019-01-03T03:46:40.473Z/LambdaPython3.zip"
               },
               "FunctionName": "LambdaPython3-dev-icInference",
               "Handler": "handler.icInference",
@@ -173,14 +173,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "IcInferenceLambdaVersionxaTdvTbUKPj8500yTA90X4AGuEkgCiWMbdwEnAVdw": {
+          "IcInferenceLambdaVersionCceRNQ5y4j651vXiZr9COm1p1raCqb02kXC8l3r2WM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "IcInferenceLambdaFunction"
               },
-              "CodeSha256": "KPGzpvCrkDHr6Oa8gwlnQI3MoKCdvXM2RelRUtezOzk="
+              "CodeSha256": "0d1WZ9okjHAqLWoZOJ/JBjP+40Pqpd/Jay7B7z/LB1Q="
             }
           },
           "ApiGatewayRestApi": {
@@ -428,7 +428,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1546396512422": {
+          "ApiGatewayDeployment1546487200490": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -547,13 +547,13 @@
           "LmInferenceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "LmInferenceLambdaVersion9nIQnd6OScW6PNC126rsNHhijSuFkAZ0DofAVftsjk"
+              "Ref": "LmInferenceLambdaVersionoZPQMulPkb2xgn9A26f1EnJ2Puu7U6yWo2OBoDbgI"
             }
           },
           "IcInferenceLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "IcInferenceLambdaVersionxaTdvTbUKPj8500yTA90X4AGuEkgCiWMbdwEnAVdw"
+              "Ref": "IcInferenceLambdaVersionCceRNQ5y4j651vXiZr9COm1p1raCqb02kXC8l3r2WM"
             }
           },
           "ServiceEndpoint": {
@@ -678,7 +678,7 @@
     "artifact": "/home/chihchungwang/Documents/git/github/chwang733/serverless-inference/.serverless/LambdaPython3.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/LambdaPython3/dev/1546396512411-2019-01-02T02:35:12.411Z",
+    "artifactDirectoryName": "serverless/LambdaPython3/dev/1546487200473-2019-01-03T03:46:40.473Z",
     "artifact": "LambdaPython3.zip"
   }
 }
