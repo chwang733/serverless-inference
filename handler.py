@@ -5,6 +5,7 @@ from botocore.vendored import requests
 from io import BytesIO
 import json
 from requests_toolbelt.multipart import MultipartDecoder
+#from PIL import Image, ExifTags
 
 def test(event, context):
 
@@ -21,11 +22,26 @@ def test(event, context):
     retJ=r.json()
     print(retJ["response"]["label"])
     
+    body = {
+        "message": "Go Serverless v1.0! Your function executed successfully!",
+        "input": event
+    }
+
+    rq=None
+    if not event['queryStringParameters']==None:
+        try:
+            event['queryStringParameters']['rotate']
+        except KeyError:
+            rq=''
+        else:
+            rq='?rotate=' +  event['queryStringParameters']['rotate']
+
+
 
     response = {
         "statusCode": 200,
         "headers": {"Access-Control-Allow-Origin": "*"},
-        "body": r.text
+        "body": rq
     }
 
 
@@ -56,9 +72,19 @@ def icInference(event, context):
     post_data= base64.b64decode(event['body'])
     decoder=MultipartDecoder(post_data, content_type)
     img=decoder.parts[0].content
+    
 
     files = {'file': ('sample.jpg', img, 'multipart/form-data', {'Expires': '0'})}
 
+#    rq=''
+#    if not event['queryStringParameters']==None:
+#        try:
+#            event['queryStringParameters']['rotate']
+#        except KeyError:
+#            rq=''
+#        else:
+#            rq='?rotate=' +  event['queryStringParameters']['rotate']
+    
     r= requests.post('http://chihchungwang.synology.me:8082/bears/inference', files=files)
     retJ=r.json()
     print(retJ["response"]["label"])
