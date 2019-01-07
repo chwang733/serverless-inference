@@ -76,16 +76,16 @@ def icInference(event, context):
 
     files = {'file': ('sample.jpg', img, 'multipart/form-data', {'Expires': '0'})}
 
-#    rq=''
-#    if not event['queryStringParameters']==None:
-#        try:
-#            event['queryStringParameters']['rotate']
-#        except KeyError:
-#            rq=''
-#        else:
-#            rq='?rotate=' +  event['queryStringParameters']['rotate']
+    rq=''
+    if not event['queryStringParameters']==None:
+        try:
+            event['queryStringParameters']['imageclassifier']
+        except KeyError:
+            rq=''
+        else:
+            rq='?imageclassifier=' +  event['queryStringParameters']['imageclassifier']
     
-    r= requests.post('http://chihchungwang.synology.me:8082/bears/inference', files=files)
+    r= requests.post('http://chihchungwang.synology.me:8082/bears/inference'+rq, files=files)
     retJ=r.json()
     print(retJ["response"]["label"])
     
